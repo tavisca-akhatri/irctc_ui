@@ -53,6 +53,8 @@ export default class Search extends Component {
     axios.get(`http://localhost:8080/searchTrains/${this.state.source}/${this.state.destination}`)
     .then(response =>{
       this.setState({trainData: response.data})
+      console.log(this.state.trainData)
+      this.props.updateTrainData(this.state.trainData);
      });
     // fetch(`http://localhost:8080/searchTrains/${this.state.source}/${this.state.destination}`)
     // //.then(response => response.json)
@@ -72,7 +74,7 @@ export default class Search extends Component {
         selected={this.state.startDate}
         onChange={this.handleChange}
       />    
-       <button class = "mybutton" onClick = {this.handleClick} >Search</button>
+       <button className = "mybutton" onClick = {this.handleClick} >Search</button>
         
         </div>
     );
