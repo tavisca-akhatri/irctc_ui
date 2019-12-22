@@ -1,0 +1,32 @@
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 15px;
+    cursor: pointer;
+  }
+
+  .showtrain {
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid black;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 5px;
+    text-align: left;
+}
+
+.heading {
+    text-align: center;
+}
+.table {
+    
+    margin-left: 200px;
+
+}
