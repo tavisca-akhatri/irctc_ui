@@ -6,10 +6,10 @@ class Person extends Component {
   state = {
     name: '',
     age : '',
-    gender: 'M',
+    gender: 'Male',
     options: [
-      { value: "Male", label: "M" },
-      { value: "Female", label: "F" },
+      { value: "Male", label: "Male" },
+      { value: "Female", label: "Female" },
       
     ],
     optionSelected: 0,
@@ -32,13 +32,13 @@ class Person extends Component {
   render() {
     this.changeClass = this.changeClass.bind(this);
     const options = [
-        { value: 'Male', label: 'M' },
-        { value: 'Female', label: 'F' },
+        { value: 'Male', label: 'Male' },
+        { value: 'Female', label: 'Female' },
       ]
     
     return (
       <div> 
-<table>
+<table class = "TFtable">
 <tbody>
 <tr>
 <td> <input type="text" placeholder= "Enter Name" onChange = {(e) => this.setName(e)}></input></td>
@@ -47,7 +47,7 @@ class Person extends Component {
  dropdownClass = {this.state.gender} 
  changeClass = {this.changeClass} 
  value={this.state.options[this.state.optionSelected]}
- onChange={this._onSelect} placeholder="M" /></td>
+ onChange={this._onSelect} placeholder="Male" /></td>
 </tr>
 </tbody>
 </table>

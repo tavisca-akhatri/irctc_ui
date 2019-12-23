@@ -59,16 +59,19 @@ export default class Search extends Component {
     
     var showTrain = <ShowTrains trains = {this.state.trainData}></ShowTrains>
     return (
-        <div className="Search">
-        
-        <input type="text" placeholder="Source" id = "source" onBlur = {this.changeSource}/>
-        <input type="text" placeholder="Destination" id = "dest" onBlur = {this.changeDestination}/>
-        <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-      />    
-       <button className = "mybutton" onClick = {this.handleClick} >Search</button>
-        
+        <div>
+          <body className = "body">
+          <h1 className="header">Irctc Booking</h1>
+          <div className="div">
+          <input type="text" placeholder="Source" id = "source" onBlur = {this.changeSource}/>
+          <input type="text" placeholder="Destination" id = "dest" onBlur = {this.changeDestination}/>
+          <DatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+          />
+          <button className = "mybutton" onClick = {this.handleClick} >Search</button>
+          </div>
+          </body>
         </div>
     );
   }
