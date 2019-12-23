@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import Dropdown from 'react-dropdown';
+import Dropdowngender from "../Dropdown/Dropdowngender";;
 import 'react-dropdown/style.css';
 
 class Person extends Component {
   state = {
     name: '',
     age : '',
-    gender: 'M'
+    gender: 'M',
+    options: [
+      { value: "Male", label: "M" },
+      { value: "Female", label: "F" },
+      
+    ],
+    optionSelected: 0,
   }
 
   setName = (e) =>{
@@ -17,8 +23,14 @@ class Person extends Component {
     this.setState({name: e.target.value})
   }
 
+  changeClass(gender){
+    this.setState({
+      gender : gender
+    })
+  }
 
   render() {
+    this.changeClass = this.changeClass.bind(this);
     const options = [
         { value: 'Male', label: 'M' },
         { value: 'Female', label: 'F' },
@@ -31,7 +43,11 @@ class Person extends Component {
 <tr>
 <td> <input type="text" placeholder= "Enter Name" onChange = {(e) => this.setName(e)}></input></td>
 <td> <input type="text" placeholder= "Enter Age" onChange = {(e) => this.setAge(e)}></input></td>
-<td> <Dropdown options={options} onChange={this._onSelect} placeholder="M" /></td>
+<td> <Dropdowngender
+ dropdownClass = {this.state.gender} 
+ changeClass = {this.changeClass} 
+ value={this.state.options[this.state.optionSelected]}
+ onChange={this._onSelect} placeholder="M" /></td>
 </tr>
 </tbody>
 </table>
