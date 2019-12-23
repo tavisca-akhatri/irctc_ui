@@ -6,8 +6,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 class Dropdowngender extends Component {
 
     DropdownClassMap = {
-        "Male" : "M",
-        "Female" : "F",
+        "Male" : "Male",
+        "Female" : "Female",
     };
     
 
@@ -24,8 +24,8 @@ class Dropdowngender extends Component {
         console.log(this.state);
         return (
             <DropdownButton id="dropdown-item-button" title={this.DropdownClassMap[this.props.dropdownClass]}>
-                <Dropdown.Item as="button" onClick={() => this.props.changeClass("Male")} >{this.DropdownClassMap["M"]}</Dropdown.Item>
-                <Dropdown.Item as="button" onClick={() => this.props.changeClass("Female")} >{this.DropdownClassMap["F"]}</Dropdown.Item>
+                <Dropdown.Item as="button" onClick={() => this.props.changeClass("Male")} >{this.DropdownClassMap["Male"]}</Dropdown.Item>
+                <Dropdown.Item as="button" onClick={() => this.props.changeClass("Female")} >{this.DropdownClassMap["Female"]}</Dropdown.Item>
                 
             </DropdownButton>
         );

@@ -4,6 +4,7 @@ import "react-dropdown/style.css";
 import Person from "../PersonDetails/Person";
 import "./Booking.css";
 import axios from "axios";
+import Button from 'react-bootstrap/Button'
 
 class Booking extends Component {
 
@@ -138,13 +139,13 @@ class Booking extends Component {
             </tr>
           </tbody>
           <tr>
-            <td></td>
           </tr>
         </table>
+        <h2 class = "header">Please Enter Details below</h2>
         {person}
-        <button className="booking" onClick={this.confirm}>
+        <Button className="booking" onClick={this.confirm}>
           Confirm
-        </button>
+        </Button>
       </div>
     );
   }

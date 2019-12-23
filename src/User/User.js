@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ShowTrains from '../ShowTrain/ShowTrain'
 
 export default class User extends Component {
     render() {
@@ -19,11 +20,19 @@ export default class User extends Component {
                     </tr>
                 </table>
                 <h2>User Details</h2>
-                <table>
+                <table style = "margin:0px">
                     <tr>
                         <td>Train No</td>
                         <td>Train Name</td>
                         <td>Date</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        {/* <td><Popup trigger={<p> {s.id} </p>} modal closeOnDocumentClick>
+                                <ShowTrains trains={this.props.trains} index={index}></ShowStops>
+                            </Popup>
+                        </td>   */}
+                        <td></td>
                     </tr>
                 </table>
             </div>
