@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
+import Popup from "reactjs-popup";
+import {Link} from 'react-router-dom';
+import ShowStops from "../ShowStops/ShowStops";
+
 class Results extends Component {
     state = {
-        trainData : []
+        trainData : [],
+        index : 0
     }
 
+    clickHandler(){
+
+    }
+    
 
     trainDetails(){
         return (
             this.props.trainData.map((train,index) => 
                 <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{train[0]}</td>
+                    <td><Popup trigger={<p> {train[0]} </p>} modal closeOnDocumentClick>
+                            <ShowStops trains={train} index={index}></ShowStops>
+                        </Popup>
+                    </td>
                     <td>{train[1]}</td>
                     <td>{train[2]}</td>
+                    <td><Link  to={{pathname: "booking", state: { train: train} }}  >Book</Link></td>
                 </tr>
             )
         )
@@ -30,6 +43,7 @@ class Results extends Component {
                             <th>Train Id</th>
                             <th>Train Name</th>
                             <th>Availability</th>
+                            <th>Book</th>
                         </tr>
                     </thead>
                     <tbody>

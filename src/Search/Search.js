@@ -29,9 +29,6 @@ export default class Search extends Component {
     
   changeSource = (e) =>{
     console.log(e.target.value)
-    let s = e.target.value;
-    //var s = document.getElementById("source").value;
-    console.log(s);
     this.setState({
       source: e.target.value
     });
@@ -53,12 +50,8 @@ export default class Search extends Component {
     axios.get(`http://localhost:8080/searchTrains/${this.state.source}/${this.state.destination}`)
     .then(response =>{
       this.setState({trainData: response.data})
-      console.log(this.state.trainData)
       this.props.updateTrainData(this.state.trainData);
      });
-    // fetch(`http://localhost:8080/searchTrains/${this.state.source}/${this.state.destination}`)
-    // //.then(response => response.json)
-    // .then(data => this.setState({trainData:data}));
     console.log(this.state.trainData)
   };
 
