@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Dropdowngender from "../Dropdown/Dropdowngender";;
 import 'react-dropdown/style.css';
+import Dropdowngender from "../Dropdown/Dropdowngender";
 
 class Person extends Component {
   state = {
